@@ -2,13 +2,13 @@ import random
 import pyautogui as pg
 from time import sleep
 from datetime import datetime
+from getpass import getpass
 
-psw = input("Sua senha: ")
+psw = getpass("Senha: ")
 pg.PAUSE = 1
 big_wait = 5
 middle_wait = 3
 
-'''
 pg.press("win")
 pg.write("firefox")
 pg.press("enter")
@@ -60,11 +60,10 @@ pg.write("SP3089789")
 pg.press("enter")
 pg.write(psw[:-1] + "7")
 pg.press("enter")
-'''
-sleep(big_wait)
+
+sleep(big_wait + 2)
 pg.hotkey("ctrlleft", "l")
 pg.write("https://eadcampus.spo.ifsp.edu.br/course/view.php")
 pg.hotkey("altright", "w")
 pg.write("id=9344")
 pg.press("enter")
-
