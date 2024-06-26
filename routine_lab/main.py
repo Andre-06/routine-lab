@@ -6,13 +6,14 @@ from getpass import getpass
 
 psw = getpass("Senha: ")
 pg.PAUSE = 1
-big_wait = 5
-middle_wait = 3
+big_wait = 10
+middle_wait = 6
 
 pg.press("win")
 pg.write("firefox")
 pg.press("enter")
-sleep(big_wait)
+sleep(20)
+pg.hotkey("ctrlleft", "l")
 pg.write("https://github.com/login")
 pg.press("enter")
 sleep(middle_wait)
@@ -35,11 +36,11 @@ pg.press("enter")
 pg.press("tab")
 
 now = datetime.now()
-pg.write(datetime.now().strftime("%m"))
+
 pg.write(str(int(now.strftime("%d")) + 1))
+pg.write(datetime.now().strftime("%m"))
 pg.write(datetime.now().strftime("%Y"))
 
-pg.press("tab")
 pg.press("tab")
 pg.press("tab")
 pg.press("space")
